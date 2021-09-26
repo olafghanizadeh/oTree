@@ -8,7 +8,7 @@ class PlayerBot(Bot):
         yield Demographics, dict(age=24, gender='Male')
 
         yield (
-            CognitiveReflectionTest,
+            RiskSurvey,
             dict(crt_bat=10, crt_widget=5, crt_lake=48),
         )
 

@@ -1,29 +1,59 @@
-{{ block title }}Thank you{{ endblock }}
+{{ block title }} {{ trans 'Thank you for your participation!' }}{{ endblock }}
 {{ block content }}
 
-    <p>
-        <em>Below are examples of messages that could be displayed for different experimental settings.</em>
-    </p>
-
-    <div class="panel panel-default" style="margin-bottom:10px">
-        <div class="panel-body">
-            <p><b>Laboratory:</b></p>
-            <p>Please remain seated until your number is called. Then take your number card, and proceed to the cashier.</p>
-            <p><em>Note: For the cashier in the laboratory, oTree can print a list of payments for all participants as a PDF.</em></p>
-        </div>
+<div class="card text-center bg-success text-white">
+    <div class="card-header">
+        <h2>{{ trans 'Score' }}</h2>
     </div>
+    <div class="card-body">
+                <p>{{ trans 'Below you will find the total amount of lottery tickets you gained in the previous rounds.' }}</p>
 
-    <div class="panel panel-default" style="margin-bottom:10px">
-        <div class="panel-body">
-            <p><b>Classroom:</b></p>
-            <p><em>If you want to keep track of how students did, the easiest thing is to assign the starting links to students by name.
-                It is even possible to give each student a single permanent link for a whole semester using Rooms;
-                so no need to waste time in each lecture with handing out new links and keeping track of which student uses which link.
-                Alternatively, you may just give
-                students anonymous links or secret nicknames.</em>
-            </p>
-        </div>
+        <h5 class="card-title">{{ trans 'Lottery tickets' }}</h5>
+        <p class="card-text h2">{{participant.payoff}}</p>
     </div>
+</div>
+
+<div class="panel panel-default mt-5 alert alert-danger" style="margin-bottom:10px">
+    <div class="panel-body">
+        <h2>{{ trans 'Important information' }}</h2>
+        <hr>
+        <p><em>
+            {{if lang == 'en'}}
+            In order to keep your personal information anonymous, your participation in this experiment is not linked to
+            your name nor your e-mail.
+            The only information that can be used to identify your participation is your randomly assigned participant
+            ID. If you win any of the prizes in the final lottery, you must collect the prize at ISEG or XLAB, and in
+            order to verify your identity, you must bring your participant ID and the redemption code. <hr>
+            Therefore, you should write down the two codes below on a piece of paper, or take a picture with your mobile
+            phone.
+            All participants will be notified by E-mail when the final lottery will take place.
+            {{endif}}
+            {{if lang == 'pt'}}
+            Para manter sua informação pessoal anónima, sua participação neste experimento não estará vinculada ao seu
+            nome ou e-mail.
+            A única informação que poderá ser utilizada para identificá-lo é o Identificação de participante, que é assignado
+            aleatoriamente. Se ganhar algum dos prémios do experimento, deverá resgatar o prémio na ISEG ou no XLAB, e,
+            para verificação de sua identidade, deverá ter consigo o seu ID de participante e o código de resgate.
+            Portanto, é necessário que o participante anote ou tire uma foto com o telemóvel dos dois códigos abaixo.
+            <hr>
+            Todos os participantes serão notificados por e-mail quando o sorteio ocorrer
+            {{endif}}
+        </em>
+        </p>
+    </div>
+</div>
+
+<div class="card text-center bg-primary text-white mt-5">
+    <div class="card-header">
+        <h2>{{ trans 'Prize redemption' }}</h2>
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">{{ trans 'Participant ID' }}</h5>
+        <p class="card-text display-3 text-uppercase font-monospace">{{participant_id}}</p>
+        <h5 class="card-title">{{ trans 'Redemption Code' }}</h5>
+        <p class="card-text display-3 text-uppercase font-monospace">{{redemption_code}}</p>
+    </div>
+</div>
 
 
 {{ endblock }}

@@ -1,5 +1,7 @@
 from otree.api import *
-
+import secrets
+import string
+from settings import LANGUAGE_CODE
 
 
 doc = """
@@ -8,10 +10,26 @@ Examples are given for the lab and Amazon Mechanical Turk (AMT).
 """
 
 
+def generate_code():
+    alphabet = string.ascii_letters + string.digits
+    while True:
+        password = ''.join(secrets.choice(alphabet) for i in range(5))
+        if (any(c.islower() for c in password)
+                and any(c.isupper() for c in password)
+                and sum(c.isdigit() for c in password) >= 3):
+            break
+
+    return password
+
+
 class Constants(BaseConstants):
     name_in_url = 'payment_info'
     players_per_group = None
     num_rounds = 1
+
+
+class Player(BasePlayer):
+    redemption_code = models.StringField()
 
 
 class Subsession(BaseSubsession):
@@ -22,17 +40,24 @@ class Group(BaseGroup):
     pass
 
 
-class Player(BasePlayer):
-    pass
+def creating_session(subsession: Subsession):
+    for player in subsession.get_players():
+        player.redemption_code = generate_code()
 
 
 # FUNCTIONS
 # PAGES
 class PaymentInfo(Page):
+    form_model = 'player'
+
     @staticmethod
     def vars_for_template(player: Player):
         participant = player.participant
-        return dict(redemption_code=participant.label or participant.code)
+        return {
+            'participant_id': participant.code,
+            'redemption_code': player.redemption_code,
+            'lang': LANGUAGE_CODE
+        }
 
 
 page_sequence = [PaymentInfo]

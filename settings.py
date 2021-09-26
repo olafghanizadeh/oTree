@@ -3,14 +3,11 @@ from os import environ
 
 SESSION_CONFIGS = [
     dict(
-        name='guess_two_thirds',
-        display_name="Guess 2/3 of the Average",
-        app_sequence=['guess_two_thirds', 'payment_info'],
-        num_demo_participants=3,
-    ),
-    dict(
-        name='survey', app_sequence=['survey', 'payment_info'], num_demo_participants=1
-    ),
+        name='MFW',
+        display_name='MFW',
+        num_demo_participants=10,
+        app_sequence=['survey','hl_mpl','payment_info'],
+    )
 ]
 
 # if you set a property in SESSION_CONFIG_DEFAULTS, it will be inherited by all configs
@@ -22,25 +19,25 @@ SESSION_CONFIG_DEFAULTS = dict(
     real_world_currency_per_point=1.00, participation_fee=0.00, doc=""
 )
 
-PARTICIPANT_FIELDS = []
+PARTICIPANT_FIELDS = ["treatment", "multiplier", "payoffs"]
 SESSION_FIELDS = []
 
 # ISO-639 code
 # for example: de, fr, ja, ko, zh-hans
-LANGUAGE_CODE = 'en'
+LANGUAGE_CODE = 'pt'
+
+if LANGUAGE_CODE == 'en':
+    POINTS_CUSTOM_NAME = 'lottery tickets'
+elif LANGUAGE_CODE == 'pt':
+    POINTS_CUSTOM_NAME = 'bilhetes'
+
+
 
 # e.g. EUR, GBP, CNY, JPY
 REAL_WORLD_CURRENCY_CODE = 'USD'
 USE_POINTS = True
 
-ROOMS = [
-    dict(
-        name='econ101',
-        display_name='Econ 101 class',
-        participant_label_file='_rooms/econ101.txt',
-    ),
-    dict(name='live_demo', display_name='Room for live demo (no participant labels)'),
-]
+ROOMS = []
 
 ADMIN_USERNAME = 'admin'
 # for security, best to set admin password in an environment variable

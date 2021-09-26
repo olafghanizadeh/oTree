@@ -1,0 +1,30 @@
+{{ block title }}{{ trans 'Risks'}}{{ endblock }}
+{{ block content }}
+
+<div class="d-flex">
+    {{ for field in risk }}
+        {{ formfield field }}
+    {{ endfor }}
+    </div>
+
+    {{ for field in gambling }}
+        {{ formfield field }}
+    {{ endfor }}
+
+<div class="card my-5">
+  <div class="card-header">
+    {{ trans 'Have you invested in any of the following investment products?' }}
+  </div>
+  <div class="card-body">
+    {{ for field in investment }}
+        {{ formfield field }}
+    {{ endfor }}
+  </div>
+</div>
+
+
+<div class="d-flex justify-content-end">
+    {{ next_button }}
+    </div>
+
+{{ endblock }}
