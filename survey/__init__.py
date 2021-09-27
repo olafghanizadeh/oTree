@@ -117,7 +117,7 @@ class Player(BasePlayer):
     riskAssesment = models.IntegerField(
         choices=[[0, gettext("Very risk averse")], [1, gettext("Risk averse")], [2, gettext("Risk neutral")],
                  [3, gettext("Risk lover")], [4, gettext("Risk lover (more)")]],
-        widget=widgets.RadioSelectHorizontal,
+        widget=widgets.RadioSelect,
         label=gettext("What is your own perception of your willingness to take risks?")
     )
     gambling = models.BooleanField(

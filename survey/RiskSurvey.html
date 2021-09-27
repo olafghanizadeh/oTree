@@ -1,7 +1,7 @@
 {{ block title }}{{ trans 'Risks'}}{{ endblock }}
 {{ block content }}
 
-<div class="d-flex">
+<div id="risk-eval" class="d-flex">
     {{ for field in risk }}
         {{ formfield field }}
     {{ endfor }}

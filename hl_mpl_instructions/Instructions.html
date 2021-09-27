@@ -3,25 +3,33 @@
 
 
 <div class="alert alert-warning" role="alert">
-  {{trans 'Read the following instructions, and ask the session manager if you have any doubts now or during the coming rounds.' }}
+    {{ if lang == 'pt'}}
+    Leia as seguintes instruções. Se tiver quaisquer dúvidas levante a mão para chamar o investigador. Deve permanecer
+    em silêncio.
+    {{endif}}
+    {{ if lang == 'en'}}
+    Read the following instructions, and ask the session manager if you have any doubts now or during the coming rounds.
+    {{endif}}
 </div>
 
 {{ if lang == 'pt'}}
-Segue-se uma série de 10 escolhas. Em cada um dos casos, pedimos que escolha <strong>Opção A</strong> ou <strong>Opção B</strong>.
+Segue-se uma série de 10 escolhas. Em cada um dos casos, pedimos que escolha <strong>Opção A</strong> ou <strong>Opção
+    B</strong>.
 Em cada uma das opções, pode ganhar dois prémios, expressos em número de bilhetes de lotaria. Por exemplo, se a opção dá:
 
 <blockquote class="blockquote my-4 text-center">
-"20% de probabilidade de ganhar 10 bilhetes e 80% de probabilidade de ganhar 5 bilhetes."
+    "20% de probabilidade de ganhar 10 bilhetes e 80% de probabilidade de ganhar 5 bilhetes."
 </blockquote>
 
 Isto significa que ao escolher esta opção, habilita-se a ganhar 10 ou 5 bilhetes de lotaria, ganhando 10 bilhetes com probabilidade 20% e 5 bilhetes com a probabilidade restante.
 {{endif}}
 {{ if lang == 'en'}}
-In the following screens you will see a series of 10 choices. In each of the choices, we ask you to select <strong>Option A</strong> or <strong>Option B</strong>.
+In the following screens you will see a series of 10 choices. In each of the choices, we ask you to select <strong>Option
+    A</strong> or <strong>Option B</strong>.
 In each option you can win one of two prizes, expressed in number of lottery tickets. For example, if the option is:
 
 <blockquote class="blockquote my-4 text-center">
-"20% probability of winning 10 tickets and 80% probability of winning 5 tickets."
+    "20% probability of winning 10 tickets and 80% probability of winning 5 tickets."
 </blockquote>
 
 This means that by selecting this option, you can win 10 or 5 lottery tickets. Winning 10 has a probability of 20% and winning 5 with 80% probability.
