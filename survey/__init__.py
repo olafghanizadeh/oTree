@@ -63,7 +63,7 @@ class Player(BasePlayer):
     accessCode = models.StringField()
     prizeChoice = models.IntegerField(
         choices=[[0, gettext("Apple AirPods")], [1, gettext("Samsung Galaxy Buds Pro")]],
-        label=gettext("One of the prizes may work better on an iPhone than an Android, therefore, please indicate which of the following options you would prefer in case you win.")
+        label=gettext("In case you win one of the bluetooth headphones, which one would you prefer?")
     )
     age = models.IntegerField(label=gettext('What year were you born?'), min=1980, max=2003)
     gender = models.StringField(
@@ -116,7 +116,7 @@ class Player(BasePlayer):
 
     riskAssesment = models.IntegerField(
         choices=[[0, gettext("Very risk averse")], [1, gettext("Risk averse")], [2, gettext("Risk neutral")],
-                 [3, gettext("Risk lover")]],
+                 [3, gettext("Risk lover")], [4, gettext("Risk lover (more)")]],
         widget=widgets.RadioSelectHorizontal,
         label=gettext("What is your own perception of your willingness to take risks?")
     )

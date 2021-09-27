@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-09-26 21:42+0000\n"
+"POT-Creation-Date: 2021-09-27 14:53+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,20 +31,38 @@ msgid ""
 "this round will not count towards your final score"
 msgstr ""
 
-#: hl_mpl/DecisionPage.html:18
+#: hl_mpl/DecisionPage.html:18 hl_mpl/ResultsPage.html:16
+#: hl_mpl/ResultsPage.html:40
 msgid "Choice"
 msgstr ""
 
 #: hl_mpl/DecisionPage.html:22 hl_mpl/DecisionPage.html:40
+#: hl_mpl/ResultsPage.html:42
 msgid "Option"
+msgstr ""
+
+#: hl_mpl/DecisionPage.html:61 hl_mpl/ResultsPage.html:75
+#: hl_mpl_instructions/Instructions.html:32 survey/Demographics.html:12
+#: survey/RiskSurvey.html:28 survey/SocioEconomic.html:12
+msgid "Continue"
 msgstr ""
 
 #: hl_mpl/ResultsPage.html:5 hl_mpl/ResultsPage.html:12
 msgid "Round results"
 msgstr ""
 
-#: hl_mpl/ResultsPage.html:68
+#: hl_mpl/ResultsPage.html:72
 msgid "Withdraw"
+msgstr ""
+
+#: hl_mpl_instructions/Instructions.html:1
+msgid "Instructions"
+msgstr ""
+
+#: hl_mpl_instructions/Instructions.html:6
+msgid ""
+"Read the following instructions, and ask the session manager if you have "
+"any doubts now or during the coming rounds."
 msgstr ""
 
 #: payment_info/PaymentInfo.html:1
@@ -149,9 +167,8 @@ msgstr ""
 
 #: survey/__init__.py:66
 msgid ""
-"One of the prizes may work better on an iPhone than an Android, "
-"therefore, please indicate which of the following options you would "
-"prefer in case you win."
+"In case you win one of the bluetooth headphones, which one would you "
+"prefer?"
 msgstr ""
 
 #: survey/__init__.py:68
@@ -280,6 +297,10 @@ msgstr ""
 
 #: survey/__init__.py:119
 msgid "Risk lover"
+msgstr ""
+
+#: survey/__init__.py:119
+msgid "Risk lover (more)"
 msgstr ""
 
 #: survey/__init__.py:121

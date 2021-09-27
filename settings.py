@@ -6,7 +6,7 @@ SESSION_CONFIGS = [
         name='MFW',
         display_name='MFW',
         num_demo_participants=10,
-        app_sequence=['survey','hl_mpl','payment_info'],
+        app_sequence=['hl_mpl_instructions', 'hl_mpl', 'survey', 'payment_info'],
     )
 ]
 
@@ -29,7 +29,7 @@ LANGUAGE_CODE = 'pt'
 if LANGUAGE_CODE == 'en':
     POINTS_CUSTOM_NAME = 'lottery tickets'
 elif LANGUAGE_CODE == 'pt':
-    POINTS_CUSTOM_NAME = 'bilhetes'
+    POINTS_CUSTOM_NAME = 'bilhete(s)'
 
 
 
