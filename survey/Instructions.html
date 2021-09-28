@@ -1,0 +1,30 @@
+{{ block title }}{{trans 'Instructions'}}{{ endblock }}
+{{ block content }}
+
+{{ if lang == 'pt'}}
+<h3>A experiencia terminou.</h3>
+<p>
+    Pedimos-lhe que complete um pequeno questionário, a informação recolhida nestas questões é totalmente anónima e não pode ser usada para o identficar como participante nesta experiencia.
+</p>
+
+<p>
+    No caso de desistir da experiencia, pedimos-lhe que responde as mesmas questões. Se não o quiser fazer, por favor levante a mão para informar o investigador.
+</p>
+{{endif}}
+{{ if lang == 'en'}}
+<h3>The experience is now completed.</h3>
+<p>
+    We now ask you to complete a quick survey about yourself, the information collected in the following questions is fully anonymous, and can not be used to identify you as a participant in the experience.
+</p>
+
+<p>
+    In the case that you withdrew from the experience, we ask you to complete the survey nonetheless. If you do not wish to complete the survey, please raise your hand and inform the researcher.
+</p>
+{{endif}}
+
+<div class="d-grid gap-2 mt-4">
+    <button class="btn btn-primary">
+        {{ trans 'Continue'}}
+    </button>
+</div>
+{{ endblock }}

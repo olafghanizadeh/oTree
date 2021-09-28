@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-09-27 14:53+0000\n"
+"POT-Creation-Date: 2021-09-28 11:50+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,33 +17,34 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
 
-#: hl_mpl/DecisionPage.html:5
+#: hl_mpl/DecisionPage.html:8
 msgid "Make your choices"
 msgstr ""
 
-#: hl_mpl/DecisionPage.html:11
+#: hl_mpl/DecisionPage.html:28
 msgid "Hypothetical winnings"
 msgstr ""
 
-#: hl_mpl/DecisionPage.html:12
+#: hl_mpl/DecisionPage.html:29
 msgid ""
 "This round involves hypothetical rewards, meaning that the results of "
 "this round will not count towards your final score"
 msgstr ""
 
-#: hl_mpl/DecisionPage.html:18 hl_mpl/ResultsPage.html:16
+#: hl_mpl/DecisionPage.html:35 hl_mpl/ResultsPage.html:16
 #: hl_mpl/ResultsPage.html:40
 msgid "Choice"
 msgstr ""
 
-#: hl_mpl/DecisionPage.html:22 hl_mpl/DecisionPage.html:40
+#: hl_mpl/DecisionPage.html:39 hl_mpl/DecisionPage.html:57
 #: hl_mpl/ResultsPage.html:42
 msgid "Option"
 msgstr ""
 
-#: hl_mpl/DecisionPage.html:61 hl_mpl/ResultsPage.html:75
-#: hl_mpl_instructions/Instructions.html:32 survey/Demographics.html:12
-#: survey/RiskSurvey.html:28 survey/SocioEconomic.html:12
+#: hl_mpl/DecisionPage.html:78 hl_mpl/ResultsPage.html:86
+#: hl_mpl_instructions/Instructions.html:45 survey/Demographics.html:12
+#: survey/Instructions.html:27 survey/RiskSurvey.html:28
+#: survey/SocioEconomic.html:12
 msgid "Continue"
 msgstr ""
 
@@ -51,18 +52,12 @@ msgstr ""
 msgid "Round results"
 msgstr ""
 
-#: hl_mpl/ResultsPage.html:72
+#: hl_mpl/ResultsPage.html:83
 msgid "Withdraw"
 msgstr ""
 
-#: hl_mpl_instructions/Instructions.html:1
+#: hl_mpl_instructions/Instructions.html:1 survey/Instructions.html:1
 msgid "Instructions"
-msgstr ""
-
-#: hl_mpl_instructions/Instructions.html:6
-msgid ""
-"Read the following instructions, and ask the session manager if you have "
-"any doubts now or during the coming rounds."
 msgstr ""
 
 #: payment_info/PaymentInfo.html:1
@@ -271,11 +266,11 @@ msgstr ""
 msgid "More than 4000€ per month"
 msgstr ""
 
-#: survey/__init__.py:113 survey/__init__.py:124
+#: survey/__init__.py:113 survey/__init__.py:134
 msgid "No"
 msgstr ""
 
-#: survey/__init__.py:113 survey/__init__.py:124
+#: survey/__init__.py:113 survey/__init__.py:134
 msgid "Yes"
 msgstr ""
 
@@ -284,30 +279,50 @@ msgid "Have you ever studied economics?"
 msgstr ""
 
 #: survey/__init__.py:118
-msgid "Very risk averse"
+msgid "If you are currently studying in ISEG – What is your field of study?"
 msgstr ""
 
-#: survey/__init__.py:118
-msgid "Risk averse"
-msgstr ""
-
-#: survey/__init__.py:118
-msgid "Risk neutral"
-msgstr ""
-
-#: survey/__init__.py:119
-msgid "Risk lover"
-msgstr ""
-
-#: survey/__init__.py:119
-msgid "Risk lover (more)"
+#: survey/__init__.py:120
+msgid "Economics"
 msgstr ""
 
 #: survey/__init__.py:121
+msgid "Finance"
+msgstr ""
+
+#: survey/__init__.py:122
+msgid "Management"
+msgstr ""
+
+#: survey/__init__.py:123
+msgid "Mathematics"
+msgstr ""
+
+#: survey/__init__.py:128
+msgid "Very risk averse"
+msgstr ""
+
+#: survey/__init__.py:128
+msgid "Risk averse"
+msgstr ""
+
+#: survey/__init__.py:128
+msgid "Risk neutral"
+msgstr ""
+
+#: survey/__init__.py:129
+msgid "Risk lover"
+msgstr ""
+
+#: survey/__init__.py:129
+msgid "Risk lover (more)"
+msgstr ""
+
+#: survey/__init__.py:131
 msgid "What is your own perception of your willingness to take risks?"
 msgstr ""
 
-#: survey/__init__.py:125
+#: survey/__init__.py:135
 msgid ""
 "Have you ever gambled online through online casinos or sport betting "
 "services such as Betclic?"

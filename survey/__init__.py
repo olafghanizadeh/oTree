@@ -114,6 +114,16 @@ class Player(BasePlayer):
         label=gettext("Have you ever studied economics?")
     )
 
+    academicField = models.IntegerField(
+        label=gettext('If you are currently studying in ISEG – What is your field of study?'),
+        choices=[
+            [0, gettext('Economics')],
+            [1, gettext('Finance')],
+            [2, gettext('Management')],
+            [3, gettext('Mathematics')]
+        ], blank=True
+    )
+
     riskAssesment = models.IntegerField(
         choices=[[0, gettext("Very risk averse")], [1, gettext("Risk averse")], [2, gettext("Risk neutral")],
                  [3, gettext("Risk lover")], [4, gettext("Risk lover (more)")]],
@@ -131,6 +141,15 @@ class Player(BasePlayer):
 
 # FUNCTIONS
 # PAGES
+class Instructions(Page):
+
+
+    @staticmethod
+    def vars_for_template(player: Player):
+        return {
+            'lang': LANGUAGE_CODE
+        }
+
 class Demographics(Page):
     form_model = 'player'
     form_fields = ['age', 'gender', 'district', 'prizeChoice']
@@ -139,7 +158,7 @@ class Demographics(Page):
 
 class SocioEconomic(Page):
     form_model = 'player'
-    form_fields = ['education', 'work', 'economics', 'income']
+    form_fields = ['education', 'work', 'economics', 'academicField', 'income']
 
 
 class RiskSurvey(Page):
@@ -157,4 +176,4 @@ class RiskSurvey(Page):
         return dict(risk=risk, gambling=gambling, investment=investment)
 
 
-page_sequence = [Demographics, SocioEconomic, RiskSurvey]
+page_sequence = [Instructions, Demographics, SocioEconomic, RiskSurvey]
