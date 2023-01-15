@@ -2,6 +2,7 @@ from otree.api import *
 import secrets
 import string
 from settings import LANGUAGE_CODE
+import random
 
 
 doc = """
@@ -22,9 +23,39 @@ def generate_code():
     return password
 
 
+def set_payoff(result, player):
+    prizes = player.session.vars['payoffs'][result[0]][player.role]
+    keys = result[1].keys()
+    key = list(keys)[0]
+    y = result[1][key]
+
+    player.participant.payoff = prizes[key][y]
+
+
+
+def draw_prize(player):
+    if player.role == Constants.DECISION_MAKER_ROLE:
+        drawn = player.participant.drawn
+        result =  random.choice(list(drawn.items()))
+
+        players = player.get_others_in_group()
+        partner = players[0]
+
+        set_payoff(result, player)
+        set_payoff(result, partner)
+
+
+
+
+
+
+
+
 class Constants(BaseConstants):
     name_in_url = 'payment_info'
-    players_per_group = None
+    players_per_group = 2
+    RECEIVER_ROLE = 'Receiver'
+    DECISION_MAKER_ROLE = 'Decision Maker'
     num_rounds = 1
 
 
@@ -38,6 +69,13 @@ class Subsession(BaseSubsession):
 
 class Group(BaseGroup):
     pass
+
+class WaitForGroup(WaitPage):
+
+    def after_all_players_arrive(group: Group):
+        for player in group.get_players():
+
+            draw_prize(player)
 
 
 def creating_session(subsession: Subsession):
@@ -60,4 +98,4 @@ class PaymentInfo(Page):
         }
 
 
-page_sequence = [PaymentInfo]
+page_sequence = [WaitForGroup, PaymentInfo]

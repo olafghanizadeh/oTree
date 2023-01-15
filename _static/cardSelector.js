@@ -6,12 +6,18 @@ document.querySelectorAll(".card").forEach((element) => {
         // Clear options
         clicked.closest('.row').querySelectorAll('.card').forEach((card) => {
             card.classList.remove("bg-success", "text-white");
+            card.querySelectorAll('.list-group-item').forEach((listItem) => {
+                listItem.classList.remove('bg-success', 'text-white')
+            })
             card.querySelector('input').checked = false;
         })
 
         // Active clicked
         let radio = clicked.querySelector("input");
         clicked.classList.add("bg-success", "text-white");
+        clicked.querySelectorAll('.list-group-item').forEach((listItem) => {
+            listItem.classList.add('bg-success', 'text-white')
+        })
         radio.checked = true;
 
         event.stopPropagation();
